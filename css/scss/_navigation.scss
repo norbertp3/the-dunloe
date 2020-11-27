@@ -1,0 +1,79 @@
+.nav {
+  &__wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    @include mQ(992px) {
+      padding: 32px;
+    }
+  }
+  &__logo--desktop {
+    @include mQ(992px) {
+      margin-left: 174px;
+    }
+  }
+  &__link {
+    color: #fff;
+    line-height: 1.5;
+    letter-spacing: 1.13px;
+    font-size: 18px;
+    font-family: Nunito;
+    margin-right: 26px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+  &__hamburger {
+    text-align: center;
+    color: #fff;
+    &--btn {
+      background: transparent;
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    p {
+      font-size: 18px;
+      margin-top: 5px;
+      @include mQmax(991px) {
+        display: none;
+      }
+    }
+  }
+  &__left {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 100%;
+    @include mQ(992px) {
+      justify-content: flex-start;
+      width: auto;
+    }
+    .form-control {
+      background-color: transparent;
+      color: #fff;
+      font-family: nunito;
+      border: none;
+      font-size: 16px;
+      margin-bottom: 0;
+      &:focus {
+        box-shadow: none;
+      }
+      option {
+        color: #000;
+      }
+    }
+  }
+  &__extra {
+    @include mQmax(991px) {
+        display: none;
+    }
+  }
+}

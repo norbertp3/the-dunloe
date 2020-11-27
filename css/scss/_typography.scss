@@ -1,0 +1,37 @@
+p {
+    font-family: Nunito;
+    font-size: 16px;
+    line-height: 1.69;
+    letter-spacing: 1px;
+    color: #575757;
+    @include mQ(992px) {
+        line-height: 1.5;
+    }
+}
+
+h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $primaryColor;
+    line-height: 1.6;
+    letter-spacing: 0.94px;
+    margin-bottom: 24px;
+    @include mQ(992px) {
+        font-size: 22px;
+        line-height: 1.45;
+        letter-spacing: 1.1px;
+    }
+}
+
+.label-text {
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    color: #a7a7a7;
+    margin-bottom: 22px;
+    display: block;
+    @include mQ(992px) {
+        color: #b9b9b9;
+        margin-bottom: 32px;
+    }
+}

@@ -1,0 +1,306 @@
+.booking-widget {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transition: 0.5s;
+    padding-top: 0;
+    @include mQmax (500px) {
+        overflow-y: hidden;
+    }
+    &-grid {
+        margin-bottom: 40px;
+        @include mQ(992px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 30px 30px;
+            grid-template-areas:
+              ". .";
+              margin-bottom: 30px;
+        }
+    }
+    a {
+        padding: 15px 0;
+        text-decoration: none;
+        font-size: 25px;
+        color: #abaaad;
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            color: #f1f1f1;
+        }
+    }
+
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: 36px;
+
+        // margin-left: 50px;
+        @include mQ(992px) {
+            right: 40px;
+            top: 5px;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 35px;
+        color: #f0f0f0;
+        font-weight: 400;
+        font-family: $headingFont;
+        margin-bottom: 60px;
+    }
+
+    .widget-form {
+        .error-message {
+            color: #fff;
+            padding-bottom: 20px;
+        }
+
+        .booking-widget-datepicker {
+            @include mQmax (991px) {
+                margin-bottom: 40px;
+            }
+            .form-control {
+                background-image: url(/images/icons/element-icon-calendar-primary-default.svg) !important;
+                background-position: calc(100% - 8px) 50%;
+                background-repeat: no-repeat;
+            }
+
+            .asd__wrapper {
+                right: 0 !important;
+                top: 121px !important;
+                left: 20px !important;
+
+                @include mQ (991px) {
+                    right: 0 !important;
+                    top: 240px !important;
+                    left: 40px !important;
+                }
+            }
+        }
+
+        .promo-code {
+            a {
+                font-size: 16px;
+                font-family: $textFont;
+                color: #5e88a2;
+                text-decoration: underline;
+                margin-bottom: 15px;
+            }
+            .form-group {
+                display: none;
+            }
+        }
+
+        .btn-secondary {
+            background: #fff;
+            border: solid 1px #5e88a2;
+            color: #5e88a2;
+
+            &:hover {
+                background: #5e88a2;
+                color: #fff;
+            }
+        }
+
+        .guest-quantity {
+            position: relative;
+
+            p {
+                color: #fff;
+                width: 100px;
+            }
+
+            .total-guests {
+                margin-bottom: 20px;
+                height: 50px;
+                background: rgba(64, 93, 111, 0.1);
+                color: #575757;
+                padding: 10px 15px;
+                border: solid 1px rgba(94, 136, 162, 0.5);
+
+                p {
+                    color:#575757;
+                    width: auto;
+                    font-size: 16px;
+
+                    &:after {
+                        content: "|";
+                        padding: 0 10px;
+                        color: #abaaad;
+                    }
+
+                    &:last-child:after {
+                        content: '';
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            button {
+                text-align: center;
+                height: 45px;
+                min-width: 45px;
+                border: solid 1px #5e88a2;
+                color: #5e88a2;
+                border-radius: 2px;
+                background-color: #fff;
+                font-size: 18px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:disabled {
+                    border: solid 1px rgba(68, 109, 134, 0.2);
+                    color: #fff;
+                    background-color: rgba(94, 136, 162, 0.2);
+                }
+            }
+
+            .guest-info {
+                .room-number {
+                    margin: 20px 0;
+                    width: 100%;
+                    text-align: left;
+                    border-bottom: 1px solid #5e88a2;
+                    line-height: .1em;
+
+                    span {
+                        background-color: #fff;
+                        padding: 0 10px 0 0;
+                    }
+
+                    @include mQ (992px) {
+                        margin: 30px 0 40px 0;
+                    }
+                    &-row {
+                        margin-bottom: 32px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .align {
+                    padding: 0 0 0 20px;
+
+                    @include mQ (500px) {
+                        padding: 0 0 0 30px;
+                    }
+                }
+
+                .age {
+                    font-size: 18px;
+                    color: #abaaad;
+                }
+            }
+
+            span {
+                // margin: 0 20px;
+                font-size: 16px;
+                text-align: center;
+                width: 50px;
+                color: #5e88a2;
+                font-family: $textFont;
+            }
+
+            .guest-widget-buttons {
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 20px 9px;
+                    background-color: #fff;
+                    border: 1px solid rgba(94, 136, 162, 0.5);
+                    @include mQ(992px) {
+                        padding: 20px 20px 80px 20px;
+                    }
+                    
+            
+                .guest-widget-buttons-container {
+                    scroll-behavior: smooth;
+                    display: none;
+                    position: releative;
+
+                    background: #fff;
+                    width: 100%;
+                    margin-bottom: 30px;
+
+
+                    @include mQmax (500px) {
+                        // margin-left: -20px;
+                        bottom: 0;
+                        margin-bottom: 0;
+                        overflow-y: auto;
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 60px;
+                        left: 0px;
+                        right: 0;
+                        margin-left: 20px;
+                        width: 0;
+                        height: 0;
+                        border-bottom: solid 10px rgba(94, 136, 162, 0.5);
+                        border-left: solid 10px transparent;
+                        border-right: solid 10px transparent;
+                        // box-shadow: 0 1px 3px 0 rgba(19, 30, 58, 0.4);
+                    }
+
+                    p {
+                        color: #222;
+                        font-weight: 500;
+                        width: 100%;
+                    }
+
+                    .person-age {
+                        span {
+                            color: rgba(43, 43, 43, 0.5);
+                        }
+                    }
+
+                    .btn-primary {
+                        display: inline-block;
+                        font-size: 18px;
+                        color: #fff;
+                        background-color:#5e88a2;
+                        border: 1px solid #5e88a2;
+                        text-transform: uppercase;
+                        font-family: $textFont;
+                        width: auto;
+                        // height: 50px;
+                        padding: 0 30px;
+                        margin-top: 10px;
+                        float: right;
+                        @include mQ (992px) {
+                            margin-top: 30px;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                            background-color: #fff;
+                            border: 1px solid #5e88a2;
+                            color: #5e88a2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btn-primary {
+        margin-top: 20px;
+    }
+}

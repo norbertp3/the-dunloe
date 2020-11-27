@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Vendors -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/vue-airbnb-style-datepicker@2.1.0/dist/vue-airbnb-style-datepicker.min.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav__wrapper">
+            <div class="nav__left">
+                <div class="nav__hamburger">
+                    <button class="nav__hamburger--btn"><img src="/images/icons/element-icon-hamburger-menu-on-dark-background-default.svg" alt="The Dunloe"></button>
+                    <p>Menu</p>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>ENG</option>
+                      <option>POL</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="nav__logo--desktop d-none d-lg-block">
+                <a href="#"><img src="/images/logo.png" alt="The Dunloe"></a>
+            </div>
+            <div class="nav__extra">
+                <a href="#" class="nav__link">Contact</a>
+                <a href="#" class="nav__link">Offers</a>
+                <a href="#" class="btn-secondary">Book</a>
+            </div>
+        </div>
+
+    </nav>
+
+    <header class="home__header">
+        <div class="home__header__logo">
+            <a href="#"><img src="/images/logo.png" alt="The Dunloe"></a>
+        </div>
+        <div class="home__header__content">
+            <p>Luxury 5-Star Hotel in Killarney, Ireland</p>
+            <a href="#"><img src="/images/icons/element-icon-arrow-down-white.svg" alt=""></a>
+        </div>
+    </header>
+
+    <main id="main" class="home">
+        <div class="home__content">
+            <section class="home__notification">
+                <div class="home__notification__buttons">
+                    <a href="#" class="btn-primary-transparent">Contact Us</a>
+                    <a href="#" class="btn-primary-transparent">Gift Vouchers</a>
+                </div>
+                <div class="home__notification__alert">
+                    <p>The Dunloe Hotel & Gardens is currently closed and will reopen in April 2021.</p>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="btn-primary-transparent">Gift Vouchers</a>
+                </div>
+            </section>
+            <section class="home__content__logo">
+                <img src="/images/logo-icon.jpg" class="d-lg-none" alt="">
+                <img src="/images/logo-dark.jpg" class="d-none d-lg-block" alt="">
+            </section>
+            <hr>
+            <section class="home__description">
+                <span class="label-text">A 5-star Irish Hotel that Nothing Comes Close To ‒ The Dunloe Hotel & Gardens</span>
+                <p>Discover The Dunloe Hotel & Gardens, Ireland’s unique five star luxury hotel that captivates with tranquil sophistication and natural splendour at the breathtaking Gap of Dunloe. The 64-acre estate transports you away from the everyday with its sprawling manicured parklands showcasing an extraordinary arboretum that leads on to the hidden ruins of the 13th century Dunloe Castle. Ancient and modern worlds meet amid the spectacular rugged beauty of the River Laune and County Kerry scenery, with a stay at The Dunloe like nowhere else on earth.</p>
+            </section>
+            <div id="booking-widget" class="booking-widget">
+                <div class="widget-form">
+                    <form action="">
+                        <div class="booking-widget-grid">
+                            <div class="form-group">
+                                <div class="booking-widget-datepicker">
+                                    <input class="form-control" type="text" id="trigger-single" :value="formatDates(arrivalDate)" placeholder="Select date" readonly>
+                                    <input type="hidden" name="arrival" :value="arrivalDate">
+                                    <airbnb-style-datepicker
+                                            :trigger-element-id="'trigger-single'"
+                                            :mode= "'single'"
+                                            :date-one="arrivalDate"
+                                            :months-to-show="1"
+                                            @date-one-selected="dateSelected"
+                                    ></airbnb-style-datepicker>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>1 Night</option>
+                                    <option>2 Nights</option>
+                                    <option>3 Nights</option>
+                                    <option>4 Nights</option>
+                                    <option>5 Nights</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="guest-widget">
+                            <div class="guest-quantity" v-for="room in rooms">
+                                <div class="d-flex total-guests roll" v-on:click="isHidden = !isHidden">
+                                    <p>{{totalRooms}} room</p>
+                                    <p>{{totalPeople}} people</p>
+                                </div>
+                                <div class="guest-widget-buttons" v-if="!isHidden">
+                                    <div class="guest-widget-buttons-container">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <p>How many rooms?</p>
+                                            <div class="d-flex align-items-center justify-content-between w-50">
+                                                <button type="button" @click="room.quantity -= 1" :disabled="room.quantity == 1">-</button>
+                                                    <span>{{room.quantity}}</span>
+                                                <button type="button" @click="room.quantity += 1">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="guest-info" v-if="room.quantity >= 4">
+                                            <p class="room-number">
+                                                <span>Room {{room.quantity}}<span>
+                                            </p>                            
+                                            <div class="align">
+                                                <div class="d-flex align-items-center my-3" v-for="person in people">
+                                                    <p class="person-age">{{person.name}} <span>(15+)</span></p>
+                                                    <div class="d-flex align-items-center justify-content-between w-50">
+                                                        <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                            <span>{{person.quantity}}</span>
+                                                        <button type="button" @click="person.quantity += 1">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="guest-info" v-if="room.quantity >= 3">
+                                            <p class="room-number">
+                                                <span class="font-italic">Room {{room.quantity}}<span>
+                                            </p>                            
+                                            <div class="align">
+                                                <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                    <p class="person-age">{{person.name}}</p>
+                                                    <div class="d-flex align-items-center justify-content-between w-50">
+                                                        <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                            <span>{{person.quantity}}</span>
+                                                        <button type="button" @click="person.quantity += 1">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="guest-info" v-if="room.quantity >= 2">
+                                            <p class="room-number">
+                                                <span class="font-italic">Room {{room.quantity}}<span>
+                                            </p>                            <div class="align">
+                                                <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                    <p class="person-age">{{person.name}}</p>
+                                                    <div class="d-flex align-items-center justify-content-between w-50">
+                                                        <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                            <span>{{person.quantity}}</span>
+                                                        <button type="button" @click="person.quantity += 1">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="guest-info" v-if="room.quantity >= 1">
+                                            <p class="room-number">
+                                                <span class="font-italic">Room {{room.quantity}}<span>
+                                            </p>
+                                            <div class="align">
+                                                <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                    <p class="person-age">{{person.name}}</p>
+                                                    <div class="d-flex align-items-center justify-content-between w-50">
+                                                        <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                            <span>{{person.quantity}}</span>
+                                                        <button type="button" @click="person.quantity += 1">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn-primary" v-on:click="isHidden = true">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="promo-code">
+                            <a href="javascript:;" class="promo-code-link">Add a code +</a>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Type your code...">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary w-100 loading-spinner">Search</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <section class="home__description">
+                <span class="label-text">All of the family can enjoy a 5-star luxury retreat at The Dunloe Hotel & Gardens.</span>
+                <h2>Your Special Day</h2>
+                <img src="/images/temp/scrn1.png" alt="">
+                <p>Only at The Dunloe, one of the best five star hotels in Ireland, can you experience Irish history, adventure, nature’s playground, world-class dining, stylish architecture, couples’ activities, and the benefits of a family friendly hotel. Our discerning guests are invited to enjoy complimentary onsite leisure activities including horse riding, tennis, fishing, swimming, sauna, steam room, and fitness studio. This famed region will meet every need with golf, tours and walks able to be arranged locally, while family friendly options such as The D Club and movie night programme run during the summer months.</p>
+                <div class="text-center">
+                    <a href="#" class="btn-primary-transparent">Find Out More</a>
+                </div>
+            </section>
+            <hr>
+            <div class="home__contant-info">
+                <div class="home__contant-info__card">
+                    <h4>ADDRESS</h4>
+                    <p>The Dunloe Hotel & Gardens, Beaufort, Killarney, Co. Kerry
+                        Ireland, V93 E029</p>
+                    <div class="text-center">
+                        <a href="#" class="btn-primary-transparent">Find Out More</a>
+                    </div>
+                </div>
+                <div class="home__contant-info__card">
+                    <h4>CONTACT US</h4>
+                    <p>T: + 353 64 664 4111</p>
+                    <div class="text-center">
+                        <a href="#" class="btn-primary-transparent">Find Out More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+
+    <!-- JS Files -->
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Multi Select -->
+    <script type="text/javascript" src="js/popper.js"></script>
+
+    <!-- Prefixfree -->
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="js/prefixfree.dynamic-dom.min.js"></script>
+    <script type="text/javascript" src="js/prefixfree.viewport-units.js"></script>
+    <script type="text/javascript" src="js/prefixfree.jquery.js"></script>
+
+    <!-- Slick -->
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/sliders.js"></script>
+
+
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-airbnb-style-datepicker@2.1.0/dist/no-dep/vue-airbnb-style-datepicker.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#guest-widget',
+            data: {
+                rooms: [{"id":1,"quantity":1,"name":"Room"}],
+                people: [{"id":1,"quantity":1,"name":"Adult"},{"id":2,"quantity":0,"name":"Children"},{"id":3,"quantity":0,"name":"Infant"}],
+                isHidden: true
+            },
+            computed: {
+                totalRooms () {
+                    return this.rooms.reduce((sum, room) => {
+                        return sum + room.quantity
+                    }, 0)
+                },
+                totalPeople () {
+                    return this.people.reduce((sum, people) => {
+                        return sum + people.quantity
+                    }, 0)
+                }
+            }
+        })
+      </script>
+
+    <!-- Custom -->
+    <script src="js/custom.js"></script>
+
+    <script>
+
+    </script>
+
+
+</body>
+
+</html>
