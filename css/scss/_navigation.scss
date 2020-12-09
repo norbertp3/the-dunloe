@@ -7,7 +7,7 @@
     justify-content: space-between;
     z-index: 2;
     @include mQ(992px) {
-      padding: 32px;
+      padding: 20px 32px;
     }
   }
   &__logo--desktop {
@@ -42,6 +42,7 @@
     p {
       font-size: 18px;
       margin-top: 5px;
+      color: #fff;
       @include mQmax(991px) {
         display: none;
       }
@@ -70,10 +71,75 @@
         color: #000;
       }
     }
+    .form-group {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
   }
   &__extra {
+    margin-top: 20px;
     @include mQmax(991px) {
         display: none;
     }
+    .btn-secondary {
+      padding: 11px 36px;
+    }
+  }
+
+}
+
+.generic__nav {
+  position: relative;
+  .nav__wrapper {
+    position: fixed;
+    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(19, 30, 58, 0.4);
+    padding: 5px 12px;
+    @include mQ(992px) {
+      padding: 12px 32px;
+      min-height: 80px;
+    }
+  }
+  .nav__hamburger p {
+    color: #5e88a2;
+    line-height: 1;
+  }
+  .nav__logo--desktop {
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    @include mQ(992px) {
+      margin-left: -35px;
+
+    }
+    img {
+      height: 40px;
+      @include mQ(992px) {
+        height: 56px;
+      }
+    }
+  }
+  .nav__link {
+    color: #5e88a2;
+  }
+  .form-group {
+    margin-bottom: 0;
+  }
+  .form-control {
+    color: #5e88a2;
+    @include mQmax(991px) {
+      padding: 0;
+      height: 38px;
+    }
+  }
+  .nav__extra {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .nav__hamburger--btn {
+    margin-top: 7px;
+  }
+  .btn-primary {
+    padding: 11px 36px;
   }
 }

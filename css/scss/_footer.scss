@@ -1,0 +1,101 @@
+.footer {
+    &__top {
+        background-color: rgba(64, 93, 111, 0.1);
+        padding: 0 40px 64px 40px;
+        text-align: center;
+        @include mQ(992px) {
+            padding: 0 60px 0 60px;
+            width: 50%;
+        }
+        &__wrapper {
+            border-top: 1px solid #5e88a2;
+            border-bottom: 1px solid #5e88a2;
+            padding: 40px 0;
+            @include mQ(992px) {
+                padding: 32px 0;
+                border-bottom: none;
+            }
+        }
+        ul {
+            list-style: none;
+            margin-top: 40px;
+            @include mQ(992px) {
+                columns: 3;
+                margin-top: 32px;
+            }
+            li {
+                margin-bottom: 16px;
+            }
+            a {
+                font-size: 16px;
+                color: #6993ac;
+                line-height: 1.2;
+                letter-spacing: 1px;
+            }
+        }
+    }
+    &__bottom {
+        background-color: #5c707c;
+        padding: 32px 16px;
+        @include mQ(992px) {
+            width: 50%;
+            display: flex;
+            padding: 60px;
+        }
+
+        ul {
+            list-style: none;
+            display: inline-flex;
+            margin-top: 32px;
+            @include mQmax(991px) {
+                margin-left: auto;
+                margin-right: auto;
+                display: table;
+            }
+            li {
+                display: inline-block;
+                margin-left: 20px;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        hr {
+            margin: 32px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        &__content {
+            padding: 0 10%;
+            text-align: center;
+            @include mQ(992px) {
+                text-align: left;
+            }
+            a {
+                color: #fff;
+                display: block;
+            }
+            p {
+                color: #fff;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__btn {
+        color: #fff;
+        background-color: #5e88a2;
+        text-align: center;
+        outline: 1px solid rgba(255,255,255,.4);
+        outline-offset: -4px;
+        letter-spacing: 0.5px;
+        padding: 5px;
+        width: 100%;
+        display: block;
+        &:hover {
+            color: #fff;
+            outline: 1px solid transparent;
+        }
+        @include mQ(992px) {
+            max-width: 179px;
+        }
+    }
+}

@@ -20,24 +20,10 @@ $(document).ready(function(){
     $('.slider-3--js').slick({
         dots: false,
         arrows: true,
-        slidesToShow: 2,
+        slidesToShow: 1,
         infinite: false,
         nextArrow: '.home__blog__btns__right',
         prevArrow: '.home__blog__btns__left',
-        responsive: [
-            {
-              breakpoint: 460,
-              settings: {
-                slidesToShow: 1,
-              }
-            },
-            {
-              breakpoint: 1025,
-              settings: {
-                slidesToShow: 2,
-              }
-            } 
-          ]
     });
     $('.slider-4--js').slick({
       dots: true,

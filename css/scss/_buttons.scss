@@ -2,10 +2,11 @@
     color: #fff;
     background-color: #5e88a2;
     border-radius: 2px;
-    padding: 12px 28px;
+    padding: 14px 28px;
     font-size: 18px;
     border: 1px solid #5e88a2;
     text-align: center;
+    line-height: 1;
     &:hover {
         color: #5e88a2;
         background-color: transparent;
@@ -17,11 +18,12 @@
     color: #5e88a2;
     background-color: transparent;
     border-radius: 2px;
-    padding: 12px 28px;
+    padding: 14px 28px;
     font-size: 18px;
     border: 1px solid #5e88a2;
     display: inline-block;
     text-align: center;
+    line-height: 1;
     @include mQ(992px) {
         width: auto;
     }
@@ -36,14 +38,49 @@
     color: #5e88a2;
     background-color: #fff;
     border-radius: 2px;
-    padding: 12px 28px;
-    text-transform: uppercase;
+    padding: 14px 28px;
     font-size: 18px;
     border: 1px solid #fff;
+    line-height: 1;
+    letter-spacing: 1.13px;
+    text-align: center;
+
     &:hover {
         color: #fff;
         background-color: transparent;
         border: 1px solid #fff;
         cursor: pointer;
+    }
+}
+.btn-secondary-transparent {
+    color: #fff;
+    background-color: transparent;
+    border-radius: 2px;
+    padding: 14px 28px;
+    font-size: 18px;
+    border: 1px solid #fff;
+    line-height: 1;
+    letter-spacing: 1.13px;
+    text-align: center;
+    // &:hover {
+    //     color: #fff;
+    //     background-color: transparent;
+    //     border: 1px solid #fff;
+    //     cursor: pointer;
+    // }
+}
+
+.link-border-arrow {
+    color: #5e88a2;
+    line-height: 1.69;
+    letter-spacing: 1px;
+    padding: 9px 17px;
+    border-left: 1px solid rgba(94, 136, 162, 0.5);
+    display: block;
+    img {
+        margin-left: 10px;
+    }
+    &:hover {
+        color: #5e88a2;
     }
 }

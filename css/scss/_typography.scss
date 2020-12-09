@@ -9,9 +9,34 @@ p {
     }
 }
 
+h1 {
+    font-family: $headingFont;
+    font-size: 32px;
+    color: $primaryColor;
+    line-height: 1.5;
+    letter-spacing: 1.27px;
+    margin-bottom: 20px;
+    @include mQ(992px) {
+        font-size: 40px;
+        line-height: 1.5;
+        letter-spacing: 1.58px;
+        margin-bottom: 55px;
+    }
+}
+
+h2 {
+    font-family: Georgia;
+    font-size: 28px;
+    letter-spacing: 1.11px;
+    color: #5e88a2;
+    @include mQ(992px) {
+        line-height: 1.5;
+        letter-spacing: 1.27px;
+    }
+}
+
 h4 {
     font-size: 20px;
-    text-transform: uppercase;
     color: $primaryColor;
     line-height: 1.6;
     letter-spacing: 0.94px;
@@ -33,5 +58,15 @@ h4 {
     @include mQ(992px) {
         color: #b9b9b9;
         margin-bottom: 32px;
+    }
+}
+
+a {
+    font-size: 16px;
+    line-height: 1.69;
+    letter-spacing: 1px;
+    color: #5e88a2;
+    &:hover {
+        color: #5e88a2;
     }
 }
