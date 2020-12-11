@@ -14,3 +14,9 @@
 .slick-dots {
     bottom: -35px;
 }
+.slick-prev:before {
+    content: url("/images/icons/element-icon-chevron-left-primary.svg");
+}
+.slick-next:before {
+    content: url("/images/icons/element-icon-chevron-right-primary.svg");
+}

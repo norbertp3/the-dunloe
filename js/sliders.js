@@ -3,38 +3,45 @@ $(document).ready(function(){
         dots: true,
         arrows: false,
     });
+    // use
     $('.slider-2--js').slick({
-        dots: true,
-        arrows: false,
-        slidesToShow: 2.1,
+        dots: false,
+        arrows: true,
+        slidesToShow: 1,
+        infinite: false,
+        nextArrow: '.slider2__btn__right',
+        prevArrow: '.slider2__btn__left',
+    });
+    // use
+    $('.slider-3--js').slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 3,
         infinite: false,
         responsive: [
           {
-            breakpoint: 760,
+            breakpoint: 721,
             settings: {
               slidesToShow: 1.5,
             }
           }
         ]
     });
-    $('.slider-3--js').slick({
-        dots: false,
-        arrows: true,
-        slidesToShow: 1,
-        infinite: false,
-        nextArrow: '.home__blog__btns__right',
-        prevArrow: '.home__blog__btns__left',
-    });
+    // use
     $('.slider-4--js').slick({
       dots: true,
-      arrows: false,
-      slidesToShow: 2.5,
+      arrows: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       infinite: false,
       responsive: [
         {
-          breakpoint: 460,
+          breakpoint: 721,
           settings: {
+            dots: false,
             slidesToShow: 1.5,
+            slidesToScroll: 1,
+            arrows: false,
           }
         }
       ]
