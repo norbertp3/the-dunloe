@@ -24,7 +24,7 @@
         <div class="nav__wrapper">
             <div class="nav__left">
                 <div class="nav__hamburger">
-                    <button class="nav__hamburger--btn"><img src="/images/icons/element-icon-hamburger-menu-on-dark-background-default.svg" alt="The Dunloe"></button>
+                    <button class="nav__hamburger--btn" data-toggle="modal" data-target="#navModal"><img src="/images/icons/element-icon-hamburger-menu-on-dark-background-default.svg" alt="The Dunloe"></button>
                     <p>Menu</p>
                 </div>
                 <div class="form-group">
@@ -57,6 +57,22 @@
     </header>
 
     <main id="main" class="home">
+        <div class="home__sticky-slider">
+            <div class="slider-5--js">
+                <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
+
+                </div>
+                <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
+
+                </div>
+                <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
+
+                </div>
+            </div>
+            <div class="home__sticky-slider__footer">
+                <a href="#" class="home__sticky-slider__btn">Button</a>
+            </div>
+        </div>
         <div class="home__content">
             <section class="home__notification">
                 <div class="home__notification__buttons">
@@ -269,6 +285,102 @@
                 </ul>
         </section>
     </footer>
+
+    <div class="modal fade nav-modal" id="navModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <img src="/images/logo-icon.jpg" alt="" class="nav-modal__logo">
+              <div class="nav-modal__close">
+                  <button type="button" class="nav__hamburger--btn" data-dismiss="modal" aria-label="Close"><img src="/images/icons/element-icon-close-gold-default.svg" alt="The Dunloe"></button>
+                  <p>Close</p>
+              </div>
+            </div>
+            <div class="modal-body">
+                <div class="nav-modal__links">
+                    <a href="#">
+                        <div class="nav-modal__item">
+                            <div>Link 1 <i class="nav-modal__item__chevron"></i></div>
+                            <div class="nav-modal__item__dropdown">
+                                <a href="#">Suites</a>
+                                <a href="#">Suites</a>
+                                <a href="#">Suites</a>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="nav-modal__item">
+                            <div>Link 1 <i class="nav-modal__item__chevron"></i></div>
+                            <div class="nav-modal__item__dropdown">
+                                <a href="#">Suites</a>
+                                <a href="#">Suites</a>
+                                <a href="#">Suites</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-modal__sub-desktop">
+                    <h1>Stay</h1>
+                    <span class="label-text">family friendly Rooms & Suites</span>
+                    <div class="nav-modal__grid">
+                        <div class="nav-modal__grid__item">
+                            <a href="#">
+                                <img src="/images/temp/img2.png" alt="" class="nav-modal__grid__img">
+                                <p class="nav-modal__grid__title">
+                                    Title
+                                </p>
+                            </a>
+                        </div>
+                        <div class="nav-modal__grid__item">
+                            <a href="#">
+                                <img src="/images/temp/img2.png" alt="" class="nav-modal__grid__img">
+                                <p class="nav-modal__grid__title">
+                                    Title
+                                </p>
+                            </a>
+                        </div>
+                        <div class="nav-modal__grid__item">
+                            <a href="#">
+                                <img src="/images/temp/img2.png" alt="" class="nav-modal__grid__img">
+                                <p class="nav-modal__grid__title">
+                                    Title
+                                </p>
+                            </a>
+                        </div>
+                        <div class="nav-modal__grid__item">
+                            <a href="#">
+                                <img src="/images/temp/img2.png" alt="" class="nav-modal__grid__img">
+                                <p class="nav-modal__grid__title">
+                                    Title
+                                </p>
+                            </a>
+                        </div>
+                        <div class="nav-modal__grid__item">
+                            <a href="#">
+                                <img src="/images/temp/img2.png" alt="" class="nav-modal__grid__img">
+                                <p class="nav-modal__grid__title">
+                                    Title
+                                </p>
+                            </a>
+                        </div>
+                        <div class="nav-modal__grid__item">
+                            <a href="#">
+                                <div class="nav-modal__grid__card">
+                                    <p>All Rooms
+                                        & Suites</p>
+                                    <img src="/images/icons/element-icon-arrow-right-white.svg" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Book Your Stay</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- JS Files -->
 

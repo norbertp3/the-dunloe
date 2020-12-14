@@ -47,18 +47,10 @@ $(document).ready(function(){
       ]
     });
     $('.slider-5--js').slick({
-      dots: true,
-      arrows: false,
-      slidesToShow: 3,
-      infinite: false,
-      responsive: [
-        {
-          breakpoint: 991,
-          settings: {
-            slidesToShow: 1,
-          }
-        }
-      ]
+      dots: false,
+      arrows: true,
+      slidesToShow: 1,
+      infinite: true,
     });
     $('.slider-6--js').slick({
       dots: false,

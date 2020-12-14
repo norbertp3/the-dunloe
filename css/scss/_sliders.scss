@@ -20,3 +20,25 @@
 .slick-next:before {
     content: url("/images/icons/element-icon-chevron-right-primary.svg");
 }
+
+.slider-5--js {
+    .slick-prev {
+        left: 30px;
+        z-index: 1;
+    }
+    .slick-prev:before {
+        content: url("/images/icons/element-icon-chevron-left-white.svg");
+        border: 1px solid #fff;
+        padding-top: 7px;
+        padding-right: 2px;
+    }
+    .slick-next {
+        right: 30px;
+    }
+    .slick-next:before {
+        content: url("/images/icons/element-icon-chevron-right-white.svg");
+        border: 1px solid #fff;
+        padding-top: 7px;
+        padding-left: 2px;
+    }
+}
