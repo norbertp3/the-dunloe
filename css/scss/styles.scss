@@ -88,6 +88,10 @@ hr {
         background-position: calc(100% - 8px) 50%;
         background-repeat: no-repeat;
         background-image: url("/images/icons/element-icon-chevron-expand-primary.svg") !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
     }
     label {
         font-size: 16px;
@@ -180,6 +184,7 @@ input[type="radio"]:checked + span.custom-radio:after {
   color: #5e88a2;
 }
 
+
 .home {
     &__sticky-slider {
         width: 50%;
@@ -214,7 +219,6 @@ input[type="radio"]:checked + span.custom-radio:after {
 
     }
     &__header {
-        background-image: url("/images/temp/header.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -288,6 +292,106 @@ input[type="radio"]:checked + span.custom-radio:after {
             margin-bottom: 32px;
             @include mQ(992px) {
                 padding: 16px 12px;
+            }
+        }
+    }
+    &__title-img-slider-btn {
+        text-align: center;
+        .slider-6--js {
+            margin-bottom: 40px;
+        }
+        &__item {
+            height: 270px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            @include mQ(1170px) {
+                height: 460px;
+            }
+        }
+        &__content {
+            position: absolute;
+            color: #fff;
+            display: flex;
+            bottom: 10px;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 15px;
+            text-align: left;
+            @include mQ(992px) {
+                bottom: 0;
+            }
+            h2 {
+                color: #fff;
+                font-size: 16px;
+                @include mQ(1170px) {
+                    font-size: 28px;
+                }
+            }
+            p {
+                color: #fff;
+            }
+            &__price {
+                padding-left: 10px;
+                border-left: 1px solid #fff;
+                @include mQ(992px) {
+                    padding-left: 15px;
+                }
+                span {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    letter-spacing: 0.5px;
+                }
+                p {
+                    font-size: 24px;
+                    font-family: headingFont;
+                    @include mQ(992px) {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            bottom: 5px;
+            li button {
+                border: 1px solid #fff
+            }
+            li.slick-active button {
+                background: #fff;
+            }
+        }
+    }
+    &__title-2-boxes {
+        &__grid {
+            @include mQ(992px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+                gap: 30px 30px;
+                grid-template-areas:
+                  ". .";
+            }
+        }
+        &__card {
+            margin-bottom: 40px;
+            
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+            height: 175px;
+            margin-bottom: 26px;
+        }
+        &__title {
+            &:after {
+                margin-top: 5px;
+                height: 2px;
+                display: block;
+                width: 40px;
+                background: rgba(94, 136, 162, 0.5);
+                content: '';
             }
         }
     }
@@ -487,8 +591,11 @@ input[type="radio"]:checked + span.custom-radio:after {
     }
     &__img-title-text-row-full-width {
         position: relative;
-        margin-bottom: 64px;
         display: block;
+        margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
         &__bg {
             background-color: rgba(64, 93, 111, 0.1);
             height: 712px;
@@ -601,6 +708,7 @@ input[type="radio"]:checked + span.custom-radio:after {
         @include mQ(1170px) {
             padding: 0 calc((100vw - 1140px) /2);
             display: flex;
+            margin: 128px 0;
         }
         &__content {
             background-color: #eceef0;
@@ -636,6 +744,7 @@ input[type="radio"]:checked + span.custom-radio:after {
         text-align: center;
         @include mQ(1170px) {
             padding: 0 calc((100vw - 1140px) /2);
+            margin: 128px 0;
         }
         ul {
             list-style-position: inside;
@@ -677,6 +786,7 @@ input[type="radio"]:checked + span.custom-radio:after {
         @include mQ(1170px) {
             padding: 0 calc((100vw - 1140px) /2);
             display: flex;
+            margin: 128px 0;
         }
         &__list {
             margin-top: 64px;
@@ -697,6 +807,9 @@ input[type="radio"]:checked + span.custom-radio:after {
         text-align: center;
         padding: 0 15px;
         margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
         &__content {
             margin-left: auto;
             margin-right: auto;
@@ -733,10 +846,12 @@ input[type="radio"]:checked + span.custom-radio:after {
     &__boxes {
         background: rgba(64, 93, 111, 0.1);
         padding: 53px 0 80px 0;
-        margin-top: 64px;
-        margin-bottom: 64px;
+        margin: 64px 0;
         @include mQ(992px) {
             padding: 64px 0;
+        }
+        @include mQ(1170px) {
+            margin: 128px 0;
         }
         img {
             object-fit: cover;
@@ -775,10 +890,13 @@ input[type="radio"]:checked + span.custom-radio:after {
                 }
             }
         }
+        .slick-prev, .slick-next {
+            top: 161px;
+        }
     }
     &__nested__menu {
         margin: 64px 0;
-        @include mQ(992px) {
+        @include mQ(1170px) {
             margin: 128px 0;
         }
         &__card {
@@ -881,6 +999,9 @@ input[type="radio"]:checked + span.custom-radio:after {
     }
     &__sliders-cards {
         margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
         .slider-4--js {
             margin-top: 24px;
         }
@@ -928,6 +1049,9 @@ input[type="radio"]:checked + span.custom-radio:after {
     }
     &__2-boxes {
         margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
         &__text {
             margin-bottom: 37px;
             @include mQ(992px) {
@@ -1045,6 +1169,9 @@ input[type="radio"]:checked + span.custom-radio:after {
     }
     &__video-large {
         margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
         &__wrapper {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 */
@@ -1065,6 +1192,8 @@ input[type="radio"]:checked + span.custom-radio:after {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+            @include mQ(1170px) {
                 margin: 128px 0;
             }
             &--reverse {
@@ -1140,6 +1269,7 @@ input[type="radio"]:checked + span.custom-radio:after {
         }
         @include mQ(1170px) {
             padding: 128px calc((100vw - 1140px) /2);
+            margin: 128px 0;
         }
         &__wrapper {
             background-color: #fff;
@@ -1191,6 +1321,8 @@ input[type="radio"]:checked + span.custom-radio:after {
         margin: 64px 0;
         @include mQ(992px) {
             padding: 128px 0;
+        }
+        @include mQ(1170px) {
             margin: 128px 0;
         }
         &__row {
@@ -1239,6 +1371,10 @@ input[type="radio"]:checked + span.custom-radio:after {
     }
     &__contact-info {
         padding: 64px 15px;
+        margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
         img {
             width: 100%;
             height: 145px;

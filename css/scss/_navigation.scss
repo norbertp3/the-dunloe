@@ -90,6 +90,14 @@
     .form-group {
       margin-top: auto;
       margin-bottom: auto;
+      select {
+        width: 80px;
+        background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-white.svg) !important;
+        background-size: 20px;
+        &:focus {
+          border: none;
+        }
+      }
     }
   }
 
@@ -109,7 +117,8 @@
 
 .generic__nav {
   position: relative;
-
+  top: 0;
+  transition: top .5s ease;
   .nav__wrapper {
     position: fixed;
     background: #fff;
@@ -152,6 +161,14 @@
 
   .form-group {
     margin-bottom: 0;
+    select {
+      width: 80px;
+      background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-primary.svg) !important;
+      background-size: 20px;
+      &:focus {
+        border: none;
+      }
+    }
   }
 
   .form-control {
@@ -366,4 +383,11 @@ body.modal-open {
       }
     }
   }
+}
+
+#fixedNavHome {
+  
+}
+.navbar-hide {
+  top: -80px;
 }

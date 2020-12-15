@@ -55,18 +55,17 @@ $(document).ready(function(){
     $('.slider-6--js').slick({
       dots: false,
       arrows: true,
-      slidesToShow: 2,
+      slidesToShow: 1,
       infinite: false,
-      nextArrow: '.sl-6--right',
-      prevArrow: '.sl-6--left',
       responsive: [
-          {
-            breakpoint: 460,
-            settings: {
-              slidesToShow: 1,
-            }
+        {
+          breakpoint: 991,
+          settings: {
+            arrows: false,
+            dots: true,
           }
-        ]
+        }
+      ]
     });
     $('.slider-7--js').slick({
       dots: false,

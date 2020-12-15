@@ -31,5 +31,22 @@ $(document).ready(function() {
       $(this).find('.nav-modal__item__chevron').toggleClass('nav-modal__item__chevron__open');
     });
   }
-  
+
+  // Scroll to arrow
+  $(".scroll-to").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".scroll-to").offset().top + 70
+    }, 2000);
+  });
+
+  $(window).scroll(function(e) {
+    // add/remove class to navbar when scrolling to hide/show
+    var scroll = $(window).scrollTop();
+    if (scroll <= 300) {
+        $('#fixedNavHome').addClass("navbar-hide");
+    } else {
+        $('#fixedNavHome').removeClass("navbar-hide");
+    }
+  });
 });
+

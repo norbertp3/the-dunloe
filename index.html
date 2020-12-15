@@ -27,7 +27,7 @@
                     <button class="nav__hamburger--btn" data-toggle="modal" data-target="#navModal"><img src="/images/icons/element-icon-hamburger-menu-on-dark-background-default.svg" alt="The Dunloe"></button>
                     <p>Menu</p>
                 </div>
-                <div class="form-group">
+                <div class="form-group lang-select">
                     <select class="form-control" id="exampleFormControlSelect1">
                       <option>ENG</option>
                       <option>POL</option>
@@ -42,22 +42,45 @@
                 <a href="#" class="nav__link">Offers</a>
                 <a href="#" class="btn-secondary">BOOK</a>
             </div>
+        </div> 
+    </nav>
+    <nav class="generic__nav navbar-hide" id="fixedNavHome">
+        <div class="nav__wrapper">
+            <div class="nav__left">
+                <div class="nav__hamburger">
+                    <button class="nav__hamburger--btn"><img src="/images/icons/element-icon-hamburger-menu-primary-default.svg" alt="The Dunloe"></button>
+                    <p>Menu</p>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>ENG</option>
+                        <option>POL</option>
+                    </select>
+                    </div>
+            </div>
+            <div class="nav__logo--desktop">
+                <a href="#"><img src="/images/logo-icon.jpg" alt="The Dunloe"></a>
+            </div>
+            <div class="nav__extra">
+                <a href="#" class="nav__link">Contact</a>
+                <a href="#" class="nav__link">Offers</a>
+                <a href="#" class="btn-primary">BOOK</a>
+            </div>
         </div>
-
     </nav>
 
-    <header class="home__header">
+    <header class="home__header" style="background-image: linear-gradient(to bottom, rgba(32, 47, 56, 0.4) 99%, rgba(19, 30, 58, 0) 50%, rgba(32, 47, 56, 0.4) 0%), url(/images/temp/header.jpg)">
         <div class="home__header__logo">
             <a href="#"><img src="/images/logo.png" alt="The Dunloe"></a>
         </div>
         <div class="home__header__content">
             <p>Luxury 5-Star Hotel in Killarney, Ireland</p>
-            <a href="#"><img src="/images/icons/element-icon-arrow-down-white.svg" alt=""></a>
+            <a href="javascript:;" class="scroll-to"><img src="/images/icons/element-icon-arrow-down-white.svg" alt=""></a>
         </div>
     </header>
 
     <main id="main" class="home">
-        <div class="home__sticky-slider">
+        <div class="home__sticky-slider d-none d-lg-block">
             <div class="slider-5--js">
                 <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
 
@@ -212,6 +235,64 @@
                     </form>
                 </div>
             </div>
+            <hr>
+            <section class="home__title-img-slider-btn">
+                <span class="label-text">DISCOVER</span>
+                <h1>Special Offers</h1>
+                <div class="slider-6--js">
+                    <div class="home__title-img-slider-btn__item" style="background-image: linear-gradient(to bottom, rgba(32, 47, 56, 0.4) 99%, rgba(19, 30, 58, 0) 50%, rgba(32, 47, 56, 0.4) 0%), url(/images/temp/header.jpg)">
+                        <div class="home__title-img-slider-btn__content">
+                            <h2>1 Night Bed & Breakfast for Two</h2>
+                            <div class="home__title-img-slider-btn__content__price">
+                                <span>FROM</span>
+                                <p>€245</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home__title-img-slider-btn__item" style="background-image: linear-gradient(to bottom, rgba(32, 47, 56, 0.4) 99%, rgba(19, 30, 58, 0) 50%, rgba(32, 47, 56, 0.4) 0%), url(/images/temp/header.jpg)">
+                        <div class="home__title-img-slider-btn__content">
+                            <h2>1 Night Bed & Breakfast for Two</h2>
+                            <div class="home__title-img-slider-btn__content__price">
+                                <span>FROM</span>
+                                <p>€245</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home__title-img-slider-btn__item" style="background-image: linear-gradient(to bottom, rgba(32, 47, 56, 0.4) 99%, rgba(19, 30, 58, 0) 50%, rgba(32, 47, 56, 0.4) 0%), url(/images/temp/header.jpg)">
+                        <div class="home__title-img-slider-btn__content">
+                            <h2>1 Night Bed & Breakfast for Two</h2>
+                            <div class="home__title-img-slider-btn__content__price">
+                                <span>FROM</span>
+                                <p>€245</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="btn-primary-transparent">Find Out More</a>
+                </div>
+            </section>
+            <hr>
+
+            <section class="home__title-2-boxes">
+                <div class="text-center">
+                    <span class="label-text">DISCOVER</span>
+                    <h1>Gift Vouchers</h1>
+                </div>
+                <div class="home__title-2-boxes__grid">
+                    <div class="home__title-2-boxes__card">
+                        <img src="/images/temp/img2.png" alt="">
+                        <p class="home__title-2-boxes__title">Lorem Ipsun</p>
+                    </div>
+                    <div class="home__title-2-boxes__card">
+                        <img src="/images/temp/img2.png" alt="">
+                        <p class="home__title-2-boxes__title">Lorem Ipsun</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="btn-primary-transparent">Find Out More</a>
+                </div>
+            </section>
             <hr>
             <section class="home__description">
                 <span class="label-text">All of the family can enjoy a 5-star luxury retreat at The Dunloe Hotel & Gardens.</span>
