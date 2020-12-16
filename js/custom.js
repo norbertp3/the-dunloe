@@ -48,5 +48,19 @@ $(document).ready(function() {
         $('#fixedNavHome').removeClass("navbar-hide");
     }
   });
+
+  // sticky gallery home
+  var stickyTop = $('.home__sticky-slider').offset().top;
+  $(window).scroll(function() {
+    var windowTop = $(window).scrollTop();
+    if (stickyTop < windowTop ) {
+      $('.home__sticky-slider').css('position', 'fixed');
+    } else {
+      $('.home__sticky-slider').css('position', 'relative');
+    }
+  });
+  
 });
+
+
 

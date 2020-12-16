@@ -40,7 +40,7 @@
             <div class="nav__extra">
                 <a href="#" class="nav__link">Contact</a>
                 <a href="#" class="nav__link">Offers</a>
-                <a href="#" class="btn-secondary">BOOK</a>
+                <a href="#" class="btn-secondary"  data-toggle="modal" data-target="#bookingModal">BOOK</a>
             </div>
         </div> 
     </nav>
@@ -56,7 +56,7 @@
                         <option>ENG</option>
                         <option>POL</option>
                     </select>
-                    </div>
+                </div>
             </div>
             <div class="nav__logo--desktop">
                 <a href="#"><img src="/images/logo-icon.jpg" alt="The Dunloe"></a>
@@ -80,22 +80,7 @@
     </header>
 
     <main id="main" class="home">
-        <div class="home__sticky-slider d-none d-lg-block">
-            <div class="slider-5--js">
-                <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
 
-                </div>
-                <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
-
-                </div>
-                <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
-
-                </div>
-            </div>
-            <div class="home__sticky-slider__footer">
-                <a href="#" class="home__sticky-slider__btn">Button</a>
-            </div>
-        </div>
         <div class="home__content">
             <section class="home__notification">
                 <div class="home__notification__buttons">
@@ -118,7 +103,7 @@
                 <span class="label-text">A 5-star Irish Hotel that Nothing Comes Close To ‒ The Dunloe Hotel & Gardens</span>
                 <p>Discover The Dunloe Hotel & Gardens, Ireland’s unique five star luxury hotel that captivates with tranquil sophistication and natural splendour at the breathtaking Gap of Dunloe. The 64-acre estate transports you away from the everyday with its sprawling manicured parklands showcasing an extraordinary arboretum that leads on to the hidden ruins of the 13th century Dunloe Castle. Ancient and modern worlds meet amid the spectacular rugged beauty of the River Laune and County Kerry scenery, with a stay at The Dunloe like nowhere else on earth.</p>
             </section>
-            <div id="booking-widget" class="booking-widget">
+            <!-- <div id="booking-widget" class="booking-widget">
                 <div class="widget-form">
                     <form action="">
                         <div class="booking-widget-grid">
@@ -234,7 +219,7 @@
                         <button type="submit" class="btn-primary w-100 loading-spinner">Search</button>
                     </form>
                 </div>
-            </div>
+            </div> -->
             <hr>
             <section class="home__title-img-slider-btn">
                 <span class="label-text">DISCOVER</span>
@@ -322,7 +307,22 @@
                 </div>
             </section>
         </div>
-
+            <div class="home__sticky-slider d-none d-lg-block">
+                <div class="slider-5--js">
+                    <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
+    
+                    </div>
+                    <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
+    
+                    </div>
+                    <div class="home__sticky-slider--img" style="background-image: linear-gradient(to bottom, rgba(121, 120, 116, 0), rgba(0, 0, 0, 0.4)), url(https://www.ahstatic.com/photos/9399_ho_00_p_1024x768.jpg)">
+    
+                    </div>
+                </div>
+                <div class="home__sticky-slider__footer">
+                    <a href="#" class="home__sticky-slider__btn">Button</a>
+                </div>
+            </div>
     </main>
 
     <footer class="footer">
@@ -366,6 +366,12 @@
                 </ul>
         </section>
     </footer>
+
+    <div class="mobile-book-btn">
+        <div class="btn-primary" data-toggle="modal" data-target="#bookingModal">
+            Book Your Stay
+        </div>
+    </div>
 
     <div class="modal fade nav-modal" id="navModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -462,6 +468,142 @@
           </div>
         </div>
       </div>
+
+    <!-- Modal -->
+    <div class="modal fade booking-modal" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="/images/logo-icon.jpg" alt="" class="booking-modal__logo-mobile">
+                <img src="/images/logo-dark.png" alt="" class="booking-modal__logo-desktop">
+                <button type="button" class="close d-flex" data-dismiss="modal" aria-label="Close">
+                    <p>CLOSE</p>
+                    <img src="/images/icons/element-icon-close-gold-default.svg" alt="The Dunloe" class="booking-modal__close-icon">
+                </button>
+            </div>
+            <div class="modal-body">
+                <h1 class="text-center mt-0">Book Your Stay</h1>
+                <div id="booking-widget" class="booking-widget">
+                    <div class="widget-form">
+                        <form action="">
+                            <div class="booking-widget-grid">
+                                <div class="form-group">
+                                    <div class="booking-widget-datepicker">
+                                        <input class="form-control" type="text" id="trigger-single" :value="formatDates(arrivalDate)" placeholder="Select date" readonly>
+                                        <input type="hidden" name="arrival" :value="arrivalDate">
+                                        <airbnb-style-datepicker
+                                                :trigger-element-id="'trigger-single'"
+                                                :mode= "'single'"
+                                                :date-one="arrivalDate"
+                                                :months-to-show="1"
+                                                @date-one-selected="dateSelected"
+                                        ></airbnb-style-datepicker>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>1 Night</option>
+                                        <option>2 Nights</option>
+                                        <option>3 Nights</option>
+                                        <option>4 Nights</option>
+                                        <option>5 Nights</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="guest-widget">
+                                <div class="guest-quantity" v-for="room in rooms">
+                                    <div class="d-flex total-guests roll" v-on:click="isHidden = !isHidden">
+                                        <p>{{totalRooms}} room</p>
+                                        <p>{{totalPeople}} people</p>
+                                    </div>
+                                    <div class="guest-widget-buttons" v-if="!isHidden">
+                                        <div class="guest-widget-buttons-container">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <p>How many rooms?</p>
+                                                <div class="d-flex align-items-center justify-content-between w-50">
+                                                    <button type="button" @click="room.quantity -= 1" :disabled="room.quantity == 1">-</button>
+                                                        <span>{{room.quantity}}</span>
+                                                    <button type="button" @click="room.quantity += 1">+</button>
+                                                </div>
+                                            </div>
+                                            <div class="guest-info" v-if="room.quantity >= 4">
+                                                <p class="room-number">
+                                                    <span>Room {{room.quantity}}<span>
+                                                </p>                            
+                                                <div class="align">
+                                                    <div class="d-flex align-items-center my-3" v-for="person in people">
+                                                        <p class="person-age">{{person.name}} <span>(15+)</span></p>
+                                                        <div class="d-flex align-items-center justify-content-between w-50">
+                                                            <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                <span>{{person.quantity}}</span>
+                                                            <button type="button" @click="person.quantity += 1">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="guest-info" v-if="room.quantity >= 3">
+                                                <p class="room-number">
+                                                    <span class="font-italic">Room {{room.quantity}}<span>
+                                                </p>                            
+                                                <div class="align">
+                                                    <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                        <p class="person-age">{{person.name}}</p>
+                                                        <div class="d-flex align-items-center justify-content-between w-50">
+                                                            <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                <span>{{person.quantity}}</span>
+                                                            <button type="button" @click="person.quantity += 1">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="guest-info" v-if="room.quantity >= 2">
+                                                <p class="room-number">
+                                                    <span class="font-italic">Room {{room.quantity}}<span>
+                                                </p>                            <div class="align">
+                                                    <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                        <p class="person-age">{{person.name}}</p>
+                                                        <div class="d-flex align-items-center justify-content-between w-50">
+                                                            <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                <span>{{person.quantity}}</span>
+                                                            <button type="button" @click="person.quantity += 1">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="guest-info" v-if="room.quantity >= 1">
+                                                <p class="room-number">
+                                                    <span class="font-italic">Room {{room.quantity}}<span>
+                                                </p>
+                                                <div class="align">
+                                                    <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                        <p class="person-age">{{person.name}}</p>
+                                                        <div class="d-flex align-items-center justify-content-between w-50">
+                                                            <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                <span>{{person.quantity}}</span>
+                                                            <button type="button" @click="person.quantity += 1">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn-primary" v-on:click="isHidden = true">Apply</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="promo-code">
+                                <a href="javascript:;" class="promo-code-link">Add a code +</a>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Type your code...">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary w-100 loading-spinner">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- JS Files -->
 

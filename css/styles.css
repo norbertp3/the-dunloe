@@ -664,6 +664,7 @@ a:hover {
 .nav__hamburger {
   text-align: center;
   color: #fff;
+  margin-right: 20px;
 }
 
 .nav__hamburger--btn {
@@ -715,6 +716,8 @@ a:hover {
   border: none;
   font-size: 16px;
   margin-bottom: 0;
+  padding: 0;
+  height: 25px;
 }
 
 .nav__left .form-control:focus {
@@ -729,10 +732,11 @@ a:hover {
 .nav__left .form-group {
   margin-top: auto;
   margin-bottom: auto;
+  padding: 0;
 }
 
 .nav__left .form-group select {
-  width: 80px;
+  width: 70px;
   background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-white.svg) !important;
   background-size: 20px;
 }
@@ -809,11 +813,12 @@ a:hover {
 }
 
 .generic__nav .form-group {
-  margin-bottom: 0;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .generic__nav .form-group select {
-  width: 80px;
+  width: 70px;
   background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-primary.svg) !important;
   background-size: 20px;
 }
@@ -1764,19 +1769,28 @@ input[type="radio"]:checked + span.custom-radio:after {
   color: #5e88a2;
 }
 
+@media screen and (min-width: 992px) {
+  .home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .home__sticky-slider {
   width: 50%;
-  float: right;
-  position: relative;
+  top: 0;
+  right: 0;
 }
 
 .home__sticky-slider__footer {
-  position: absolute;
+  position: relative;
   bottom: 100px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  bottom: 135px;
 }
 
 .home__sticky-slider--img {
@@ -3507,6 +3521,103 @@ input[type="radio"]:checked + span.custom-radio:after {
   display: block;
   margin-bottom: 16px;
   text-decoration: underline;
+}
+
+.mobile-book-btn {
+  display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .mobile-book-btn {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: block;
+  }
+}
+
+.mobile-book-btn .btn-primary {
+  border-radius: 0;
+}
+
+.booking-modal .modal-dialog {
+  margin: 0;
+  min-width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .booking-modal .modal-dialog {
+    margin: 40px;
+    min-width: calc(100% - 80px);
+    height: calc(100% - 80px);
+  }
+}
+
+.booking-modal .modal-header {
+  border-bottom: none;
+  padding: 8px 15px;
+}
+
+@media screen and (min-width: 992px) {
+  .booking-modal .modal-header {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .booking-modal .modal-body {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.booking-modal .modal-content {
+  border-radius: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.booking-modal__logo-mobile {
+  left: 50%;
+  width: 62px;
+  position: relative;
+  margin-left: -31px;
+}
+
+@media screen and (min-width: 992px) {
+  .booking-modal__logo-mobile {
+    display: none;
+  }
+}
+
+.booking-modal__logo-desktop {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .booking-modal__logo-desktop {
+    display: block;
+  }
+}
+
+.booking-modal .close {
+  opacity: 1;
+  margin-top: -8px;
+}
+
+.booking-modal .close p {
+  color: #5e88a2;
+  font-size: 18px;
+  margin-right: 10px;
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .booking-modal .close p {
+    display: block;
+  }
 }
 
 .full-width .generic__newsletter.cnt {
