@@ -516,7 +516,19 @@ input[type="radio"]:checked + span.custom-radio:after {
         }
         &__card {
             padding: 32px;
-            background-color: #5c707c;
+            background-color: #5e88a2;
+            &.stay {
+                background-color: #5c707c;
+            }
+            &.dine {
+                background-color: #9d9650;
+            }
+            &.leisure {
+                background-color: #b6985a;
+            }
+            &.see-do {
+                background-color: #514a04;
+            }
             h2 {
                 color: #fff;
                 padding-bottom: 27px;
@@ -995,7 +1007,19 @@ input[type="radio"]:checked + span.custom-radio:after {
             
             .nav-tabs .nav-link.active {
                 border: none;
-                border-left: 4px solid #b6985a;
+                border-left: 4px solid #5e88a2;
+                &.stay {
+                    border-left: 4px solid #5c707c;
+                }
+                &.dine {
+                    border-left: 4px solid #9d9650;
+                }
+                &.leisure {
+                    border-left: 4px solid #b6985a;
+                }
+                &.see-do {
+                    border-left: 4px solid #514a04;
+                }
             }
             .tab-content>.active {
                 display: block;
