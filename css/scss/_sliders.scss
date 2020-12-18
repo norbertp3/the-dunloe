@@ -1,6 +1,6 @@
 .slick-dots li button {
     background: transparent;
-    border: 1px solid #93a7cb;
+    border: 1px solid #5e88a2;
     border-radius: 20px;
     height: 1px;
     width: 1px;
@@ -9,7 +9,7 @@
     content: '';
 }
 .slick-dots li.slick-active button {
-    background: #93a7cb;
+    background: #5e88a2;
 }
 .slick-dots {
     bottom: -35px;
@@ -29,16 +29,15 @@
     .slick-prev:before {
         content: url("/images/icons/element-icon-chevron-left-white.svg");
         border: 1px solid #fff;
-        padding-top: 7px;
-        padding-right: 2px;
+        padding: 15px 11px 11px 11px;
     }
     .slick-next {
-        right: 30px;
+        right: 50px;
     }
     .slick-next:before {
         content: url("/images/icons/element-icon-chevron-right-white.svg");
         border: 1px solid #fff;
-        padding-top: 7px;
-        padding-left: 2px;
+        padding: 15px 11px 11px 11px;
+
     }
 }

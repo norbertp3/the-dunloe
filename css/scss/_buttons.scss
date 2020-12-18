@@ -8,9 +8,9 @@
     text-align: center;
     line-height: 1;
     &:hover {
-        color: #5e88a2;
-        background-color: transparent;
-        border: 1px solid #5e88a2;
+        color: #fff;
+        background-color: #5c707c;
+        border: 1px solid #5c707c;
         cursor: pointer;
     }
 }
@@ -46,8 +46,8 @@
     text-align: center;
 
     &:hover {
-        color: #fff;
-        background-color: transparent;
+        color: rgba(94, 136, 162, 0.6);
+        background-color: #fff;
         border: 1px solid #fff;
         cursor: pointer;
     }
@@ -62,12 +62,12 @@
     line-height: 1;
     letter-spacing: 1.13px;
     text-align: center;
-    // &:hover {
-    //     color: #fff;
-    //     background-color: transparent;
-    //     border: 1px solid #fff;
-    //     cursor: pointer;
-    // }
+    &:hover {
+        color: #5e88a2;
+        background-color: #ffffff;
+        border: 1px solid #fff;
+        cursor: pointer;
+    }
 }
 
 .link-border-arrow {
