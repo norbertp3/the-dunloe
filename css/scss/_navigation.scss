@@ -94,7 +94,7 @@
       padding: 0;
       select {
         width: 70px;
-        background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-white.svg) !important;
+        background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-white.png) !important;
         background-size: 20px;
         &:focus {
           border: none;
@@ -168,7 +168,7 @@
 
     select {
       width: 70px;
-      background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-primary.svg) !important;
+      background-image: url(http://127.0.0.1:5500/images/icons/element-icon-chevron-expand-primary.png) !important;
       background-size: 20px;
       &:focus {
         border: none;
@@ -283,7 +283,8 @@ body.modal-open {
   }
   &__item {
     display: block;
-    padding: 12px 15px;
+    padding: 12px 0;
+    margin: 0 18px;
     border-bottom: 1px solid rgba(94, 136, 162, 0.5);
     &__chevron {
       float: right;
@@ -303,6 +304,7 @@ body.modal-open {
     }
     @include mQ(1170px) {
       padding: 15px 64px;
+      margin: 0;
     }
     &__dropdown {
       display: none;
@@ -325,7 +327,6 @@ body.modal-open {
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-width: 312px;
     .btn {
       width: 100%;
       border-radius: 0;

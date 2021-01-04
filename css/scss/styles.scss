@@ -9,6 +9,7 @@
 @import './navigation';
 @import './widget';
 @import './footer';
+@import './blog';
 
 @font-face {
     font-family: Nunito;
@@ -87,7 +88,7 @@ hr {
         background-size: 15px;
         background-position: calc(100% - 8px) 50%;
         background-repeat: no-repeat;
-        background-image: url("/images/icons/element-icon-chevron-expand-primary.svg") !important;
+        background-image: url("/images/icons/element-icon-chevron-expand-primary.png") !important;
         -webkit-appearance: none;
         -moz-appearance: none;
         text-indent: 1px;
@@ -221,7 +222,8 @@ input[type="radio"]:checked + span.custom-radio:after {
             border: 1px solid #fff;
             padding: 8px 27px;
             &:hover {
-                color: #fff;
+                color: #5e88a2;
+                background-color: #fff;
             }
         }
 
@@ -245,7 +247,7 @@ input[type="radio"]:checked + span.custom-radio:after {
                 margin-bottom: 5px;
                 color: #fff;
                 font-size: 20px;
-                font-family: $headingFont;
+                font-family: $textFont;
                 @include mQ(992px) {
                     font-size: 22px
                 }
@@ -1056,8 +1058,15 @@ input[type="radio"]:checked + span.custom-radio:after {
         }
         .slider-4--js {
             margin-top: 24px;
+            @include mQ(992px) {
+                margin-top: 75px;
+            }
         }
-
+        p {
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         &__item {
             margin: 0 10px;
             margin-bottom: 32px;
@@ -1326,31 +1335,30 @@ input[type="radio"]:checked + span.custom-radio:after {
         &__wrapper {
             background-color: #fff;
             padding: 25px 15px;
+            position: relative;
             @include mQ(450px) {
                 padding: 50px 50px;
             }
             @include mQ(992px) {
                 padding: 50px 100px;
+                &:before {
+                    content: url("/images/icons/element-icon-quotation-marks-left.svg");
+                    left: 80px;
+                    position: absolute;
+                    top: 40%;
+                }
+                &:after {
+                    content: url("/images/icons/element-icon-quotation-marks-right.svg");
+                    right: 80px;
+                    position: absolute;
+                    top: 50%;
+                }
             }
         }
         &__card {
             position: relative;
             @include mQ(727px) {
                 padding: 0 100px;
-            }
-            @include mQ(992px) {
-                &:before {
-                    content: url("/images/icons/element-icon-quotation-marks-left.svg");
-                    left: 0;
-                    position: absolute;
-                    top: 0px;
-                }
-                &:after {
-                    content: url("/images/icons/element-icon-quotation-marks-right.svg");
-                    right: 0;
-                    position: absolute;
-                    top: 30px;
-                }
             }
             p {
                 margin-bottom: 16px;
@@ -1572,6 +1580,7 @@ input[type="radio"]:checked + span.custom-radio:after {
     }
     .footer__top.cnt {
         width: 100%;
+        padding: 0 40px 64px 40px;
     }
     .footer__bottom.cnt {
         width: 100%;
