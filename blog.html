@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Vendors -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/vue-airbnb-style-datepicker@2.1.0/dist/vue-airbnb-style-datepicker.min.css">
+
+</head>
+
+<body>
+    <nav class="generic__nav">
+        <div class="nav__wrapper">
+            <div class="nav__left">
+                <div class="nav__hamburger">
+                    <button class="nav__hamburger--btn">
+                        <img src="/images/icons/element-icon-hamburger-menu-primary-default.svg" alt="The Dunloe">
+                        <p>Menu</p>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>ENG</option>
+                      <option>POL</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="nav__logo--desktop">
+                <a href="#"><img src="/images/logo-icon.jpg" alt="The Dunloe"></a>
+            </div>
+            <div class="nav__extra">
+                <a href="#" class="nav__link">Contact</a>
+                <a href="#" class="nav__link">Offers</a>
+                <a href="#" class="btn-primary">BOOK</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+<main class="blog blog-list">
+    <section class="blog-list__header bg-transparent p-0">
+        <div class="cnt">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a href="">
+                        <img src="/images/temp/img2.png" alt="" class="blog-list__header__img">
+                    </a>
+                </div>
+                <div class="col-lg-6 my-auto">
+                    <h2>A virtual tour of must-see places to visit in Kerry</h2>
+                    <p class="label-text">Posted: Thursday, July 9, 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="cnt">
+        <section class="blog__content">
+                <div class="blog__content__text">
+                    <p>The Ring of Kerry captures the imagination of both locals and visitors, with the sublime views only equalled in the diverse range of activities everyone can enjoy! As the saying goes,</p>
+                    <p>“Any Kerryman will tell you that there are only two Kingdoms: the Kingdom of God and the Kingdom of Kerry – “One is not of this world, and the other is out of this world".</p>
+                    <p>For anyone who can’t travel right now due to lockdown and travel restrictions or for anyone who is dreaming of Kerry, this Virtual Travel Guide lets you experience this fabled county including wonderful visuals of nature and the landscape, food, history and much more.</p>
+                    <h3>Visit Landmarks & Renowned Destinations Remotely</h3>
+                    <p>The Ring of Kerry captures the imagination of both locals and visitors, with the sublime views only equalled in the diverse range of activities everyone can enjoy! As the saying goes,</p>
+                    <p>“Any Kerryman will tell you that there are only two Kingdoms: the Kingdom of God and the Kingdom of Kerry – “One is not of this world, and the other is out of this world".</p>
+                    <p>For anyone who can’t travel right now due to lockdown and travel restrictions or for anyone who is dreaming of Kerry, this Virtual Travel Guide lets you experience this fabled county including wonderful visuals of nature and the landscape, food, history and much more.</p>
+                    <h2>Visit Landmarks & Renowned Destinations Remotely</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QOAsxHlggmk?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="blog__content__widget">
+                    <h3 class="text-center">Book Your Stay</h3>
+                    <div id="booking-widget" class="booking-widget">
+                        <div class="widget-form">
+                            <form action="">
+                                <div class="booking-widget-grid">
+                                    <div class="form-group">
+                                        <div class="booking-widget-datepicker">
+                                            <input class="form-control" type="text" id="trigger-single" :value="formatDates(arrivalDate)" placeholder="Select date" readonly>
+                                            <input type="hidden" name="arrival" :value="arrivalDate">
+                                            <airbnb-style-datepicker
+                                                    :trigger-element-id="'trigger-single'"
+                                                    :mode= "'single'"
+                                                    :date-one="arrivalDate"
+                                                    :months-to-show="1"
+                                                    @date-one-selected="dateSelected"
+                                            ></airbnb-style-datepicker>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>1 Night</option>
+                                            <option>2 Nights</option>
+                                            <option>3 Nights</option>
+                                            <option>4 Nights</option>
+                                            <option>5 Nights</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="guest-widget">
+                                    <div class="guest-quantity" v-for="room in rooms">
+                                        <div class="d-flex total-guests roll" v-on:click="isHidden = !isHidden">
+                                            <p>{{totalRooms}} room</p>
+                                            <p>{{totalPeople}} people</p>
+                                        </div>
+                                        <div class="guest-widget-buttons" v-if="!isHidden">
+                                            <div class="guest-widget-buttons-container">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <p>How many rooms?</p>
+                                                    <div class="d-flex align-items-center justify-content-between w-50">
+                                                        <button type="button" @click="room.quantity -= 1" :disabled="room.quantity == 1">-</button>
+                                                            <span>{{room.quantity}}</span>
+                                                        <button type="button" @click="room.quantity += 1">+</button>
+                                                    </div>
+                                                </div>
+                                                <div class="guest-info" v-if="room.quantity >= 4">
+                                                    <p class="room-number">
+                                                        <span>Room {{room.quantity}}<span>
+                                                    </p>                            
+                                                    <div class="">
+                                                        <div class="d-flex align-items-center my-3" v-for="person in people">
+                                                            <p class="person-age">{{person.name}} <span>(15+)</span></p>
+                                                            <div class="d-flex align-items-center justify-content-between w-50">
+                                                                <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                    <span>{{person.quantity}}</span>
+                                                                <button type="button" @click="person.quantity += 1">+</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="guest-info" v-if="room.quantity >= 3">
+                                                    <p class="room-number">
+                                                        <span class="font-italic">Room {{room.quantity}}<span>
+                                                    </p>                            
+                                                    <div class="">
+                                                        <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                            <p class="person-age">{{person.name}}</p>
+                                                            <div class="d-flex align-items-center justify-content-between w-50">
+                                                                <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                    <span>{{person.quantity}}</span>
+                                                                <button type="button" @click="person.quantity += 1">+</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="guest-info" v-if="room.quantity >= 2">
+                                                    <p class="room-number">
+                                                        <span class="font-italic">Room {{room.quantity}}<span>
+                                                    </p>                            <div class="align">
+                                                        <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                            <p class="person-age">{{person.name}}</p>
+                                                            <div class="d-flex align-items-center justify-content-between w-50">
+                                                                <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                    <span>{{person.quantity}}</span>
+                                                                <button type="button" @click="person.quantity += 1">+</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="guest-info" v-if="room.quantity >= 1">
+                                                    <p class="room-number">
+                                                        <span class="font-italic">Room {{room.quantity}}<span>
+                                                    </p>
+                                                    <div class="">
+                                                        <div class="d-flex align-items-center room-number-row" v-for="person in people">
+                                                            <p class="person-age">{{person.name}}</p>
+                                                            <div class="d-flex align-items-center justify-content-between w-50">
+                                                                <button type="button" @click="person.quantity -= 1" :disabled="person.quantity == 0">-</button>
+                                                                    <span>{{person.quantity}}</span>
+                                                                <button type="button" @click="person.quantity += 1">+</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn-primary" v-on:click="isHidden = true">Apply</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="promo-code">
+                                    <a href="javascript:;" class="promo-code-link">Add a code +</a>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Type your code...">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-primary w-100 loading-spinner">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="footer full-width">
+    <section class="generic__newsletter cnt">
+            <div class="generic__newsletter__content">
+                <h4>Sign up to Our Newsletter</h4>
+                <p>Stay Up to Date with News & Special Offers from The Dunloe Hotel & Gardens and its Sister Hotels</p>
+            </div>
+            <form action="" class="generic__newsletter__form">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-label="email" placeholder="Email Address">
+                    </div>
+                    <button type="submit" class="btn-primary">Join the List</button>
+            </form>
+    </section>
+    <section class="footer__top cnt">
+            <div class="footer__top__wrapper">
+                <a href="#"><img src="/images/logo-dark.png" alt=""></a>
+                <ul>
+                    <li><a href="#">Our Blog</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                </ul>
+            </div>
+    </section>
+    <section class="footer__bottom cnt">
+            <a href="#" class="footer__btn">CAREERS <br> -at- <br> The Dunloe House & Gardens</a>
+            <hr>
+            <div class="footer__bottom__content">
+                <p>Dunloe Hotel & Gardens
+                    Beaufort, Killarney, Co. Kerry
+                    Ireland, V93 E029
+                </p>
+                <a href="tel:+353646644111">T: + 353 64 664 4111</a>
+            </div>
+            <ul>
+                <li><a href=""><img src="/images/icons/element-icon-social-facebook-on-dark-background-default.svg" alt=""></a></li>
+                <li><a href=""><img src="/images/icons/element-icon-social-instagram-on-dark-background-default.svg" alt=""></a></li>
+            </ul>
+    </section>
+</footer>
+
+<!-- JS Files -->
+
+<!-- jQuery -->
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<!-- Multi Select -->
+<script type="text/javascript" src="js/popper.js"></script>
+
+<!-- Prefixfree -->
+<script type="text/javascript" src="js/prefixfree.min.js"></script>
+<script type="text/javascript" src="js/prefixfree.dynamic-dom.min.js"></script>
+<script type="text/javascript" src="js/prefixfree.viewport-units.js"></script>
+<script type="text/javascript" src="js/prefixfree.jquery.js"></script>
+
+<!-- Slick -->
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/sliders.js"></script>
+
+
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-airbnb-style-datepicker@2.1.0/dist/no-dep/vue-airbnb-style-datepicker.min.js"></script>
+
+<script>
+    new Vue({
+        el: '#guest-widget',
+        data: {
+            rooms: [{"id":1,"quantity":1,"name":"Room"}],
+            people: [{"id":1,"quantity":1,"name":"Adult"},{"id":2,"quantity":0,"name":"Children"},{"id":3,"quantity":0,"name":"Infant"}],
+            isHidden: true
+        },
+        computed: {
+            totalRooms () {
+                return this.rooms.reduce((sum, room) => {
+                    return sum + room.quantity
+                }, 0)
+            },
+            totalPeople () {
+                return this.people.reduce((sum, people) => {
+                    return sum + people.quantity
+                }, 0)
+            }
+        }
+    })
+  </script>
+
+<!-- Custom -->
+<script src="js/custom.js"></script>
+
+<script>
+
+</script>
+
+
+</body>
+
+</html>

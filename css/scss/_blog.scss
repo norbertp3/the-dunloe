@@ -54,4 +54,47 @@
             }
         }
     }
+    &__content {
+        @include mQ(992px) {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            grid-template-rows: 1fr;
+            gap: 75px 75px;
+            grid-template-areas:
+                ". .";
+        }
+        &__widget {
+            margin-top: 64px;
+            margin-bottom: 64px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            @include mQ(992px) {
+                margin-top: 0;
+                border-top: 1px solid #d8d8d8;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        p {
+            margin-bottom: 32px;
+        }
+        h1, h2 ,h3, h4, h5, h6 {
+            color: #5e88a2;
+            margin: 32px 0;
+        }
+        .booking-widget-grid {
+            display: block;
+            margin-bottom: 16px;
+        }
+        .booking-widget .widget-form .guest-quantity .total-guests {
+            // margin-bottom: 0;
+        }
+        .booking-widget .widget-form .promo-code a {
+            margin-bottom: 0;
+        }
+        .booking-widget .widget-form .booking-widget-datepicker {
+            margin-bottom: 0;
+        }
+    }
 }
