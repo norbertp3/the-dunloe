@@ -83,4 +83,24 @@ $(document).ready(function(){
           }
         ]
     });
+    $('.slider-8--js').slick({
+      dots: false,
+      arrows: true,
+      slidesToShow: 2,
+      infinite: false,
+      nextArrow: '.sl-8--right',
+      prevArrow: '.sl-8--left',
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 1,
+              dots: true,
+              arrows: false,
+            }
+          }
+        ]
+    });
 });

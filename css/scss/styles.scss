@@ -1498,7 +1498,137 @@ input[type="radio"]:checked + span.custom-radio:after {
             }
         }
     }
+    &__half-banner {
+        padding: 0 15px;
+        position: relative;
+        margin-bottom: 64px;
+        @include mQ(992px) {
+            padding: 0;
+        }
+        img {
+            height: 275px;
+            object-fit: cover;
+            @include mQ(992px) {
+                height: 584px;
+            }
+        }
+        .sl-8--left, .sl-8--right {
+            background-color: #967f57;
+            &:focus {
+                border: none;
+            }
+            @include mQmax(991px) {
+                display: none;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
 
+        .slider__btns {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -36px;
+            margin-top: -18px;
+            button {
+                margin: 0;
+                height: 36px;
+                width: 36px;
+            }
+            img {
+                height: 24px;
+                width: 24px;
+            }
+
+        }
+    }
+    &__split-img {
+        margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
+        img {
+            height: 258px;
+            width: 100%;
+            object-fit: cover;
+            @include mQ(992px) {
+                height: 384px;
+            }
+        }
+        &__wrapper {
+            position: relative;
+            min-width: 600px;
+            &:before {
+                content: '';
+                height: 100%;
+                width: 4px;
+                position: absolute;
+                left: 33%;
+                top: 0;
+                background-color: #fff;
+            }
+            &:after {
+                content: '';
+                height: 100%; //You can change this if you want smaller/bigger borders
+                width: 4px;
+              
+                position: absolute;
+                right: 33%;
+                top: 0; // If you want to set a smaller height and center it, change this value
+              
+                background-color: #fff; // The color of your border
+            }
+        }
+    }
+    &__tiles-grid {
+        margin: 64px 0;
+        @include mQ(1170px) {
+            margin: 128px 0;
+        }
+        &__item {
+            margin-bottom: 30px;
+            display: block;
+            text-align: center;
+            padding: 30px;
+            height: 100%;
+            min-height: 240px;
+            display: grid;
+            @include mQ(992px) {
+                min-height: 320px;
+            }
+            h2 {
+                color: #fff;
+            }
+            p {
+                margin-bottom: 20px;
+                color: #fff;
+            }
+            .btn-secondary-transparent {
+                display: inline-block;
+            }
+            &--frame {
+                outline: 1px solid #fff;
+                outline-offset: -30px;
+            }
+        }
+        &__center {
+            display: block;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        &__container {
+            @include mQ(716px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 30px 30px;
+                grid-template-areas:
+                  ". . ."
+                  ". . .";
+            }
+        }
+    }
 }
 .mobile-book-btn {
     display: none;
